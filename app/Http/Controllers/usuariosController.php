@@ -14,6 +14,10 @@ use function PHPSTORM_META\type;
 
 class usuariosController extends Controller
 {
+    public function dashboard(){
+        return view('dashboard');
+    }
+
     public function modifyusers($idusuaio)
     {
         $consult = users::withTrashed()->join('typeusers', 'users.idtipoususario', '=', 'typeusers.idtipoususario')

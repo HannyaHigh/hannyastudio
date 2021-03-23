@@ -41,6 +41,9 @@ route::get('modifyusers/{idusuaio}', [usuariosController::class, 'modifyusers'])
 route::post('savechanges', [usuariosController::class, 'savechanges'])->name('savechanges');
 
 
+route::get('dashboard', [usuariosController::class, 'dashboard'])->name('dashboard');
+
+
 
 // Routes for contact and clients
 route::get('cliente',[ClienteController::class, 'cliente'])->name('cliente');

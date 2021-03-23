@@ -35,7 +35,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('dashboard')}}">
               <i class="material-icons">dashboard</i>
               <p>Inicio</p>
             </a>
