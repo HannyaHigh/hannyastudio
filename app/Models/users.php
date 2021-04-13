@@ -11,5 +11,5 @@ class users extends Model
     use HasFactory;
     use SoftDeletes;
     protected $primaryKey = 'idusuaio';
-    protected $fillable = ['idusuaio', 'nombre', 'app', 'apm', 'email', 'contraseña', 'sexo', 'celular', 'ciudad', 'calle', 'nocalle', 'cp', 'idtipoususario', 'img'];
+    protected $fillable = ['idusuaio', 'nombre', 'app', 'apm', 'email', 'contraseña', 'sexo', 'celular', 'ciudad', 'calle', 'nocalle', 'cp', 'idtipoususario', 'img', 'activo'];
 }

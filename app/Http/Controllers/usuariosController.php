@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\users;
 use App\Models\typeusers;
 use App\Models\paysheets;
+use Illuminate\Support\Facades\Hash;
 //use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Support\Facades\Session;
 
@@ -179,7 +180,7 @@ class usuariosController extends Controller
             'app' => 'required|regex:/^[A-Z, a-z][A-Z, a-z, ,á, é, í, ó, ú]+$/',
             'apm' => 'required|regex:/^[A-Z, a-z][A-Z, a-z, ,á, é, í, ó, ú]+$/',
             'email' => 'required|email',
-            'contraseña' => 'required|regex:/^[0-9]{12}$/',
+            'contraseña' => 'required|regex:/^[0-9]{5}$/',
             'celular' => 'required|regex:/^[0-9]{10}$/',
             'ciudad' => 'required|regex:/^[A-Z, a-z][A-Z, a-z, ,á, é, í, ó, ú, ,]+$/',
             'calle' => 'required|regex:/^[A-Z, a-z][A-Z, a-z, ,á, é, í, ó, ú]+$/',
@@ -189,6 +190,8 @@ class usuariosController extends Controller
 
             //'g-recaptcha-response' => 'required|captcha',
         ]);
+        
+        // echo $passwordEncriptado;
 
         $file = $request->file('img');
         if($file<>""){
@@ -207,13 +210,15 @@ class usuariosController extends Controller
         $users->app = $request->app;
         $users->apm = $request->apm;
         $users->email = $request->email;
-        $users->contraseña = $request->contraseña;
+        // $users->contraseña = $request->contraseña;
+        $users->contraseña = Hash::make($request->contraseña);
         $users->sexo = $request->sexo;
         $users->celular = $request->celular;
         $users->ciudad = $request->ciudad;
         $users->calle = $request->calle;
         $users->nocalle = $request->nocalle;
         $users->cp = $request->cp;
+        $users->activo = $request->activo;
         $users->idtipoususario = $request->idtipoususario;
         $users->save();
         Session::flash('mensaje', "El empleado $request->nombre $request->app $request->apm

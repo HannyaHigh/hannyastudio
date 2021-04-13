@@ -7,7 +7,7 @@ use App\Http\Controllers\contactoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\GaleriaController;
-
+use App\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +91,13 @@ route::get('modificagaleria/{idgaleria}',[GaleriaController::class, 'modificagal
 route::post('guardacambiogaleria',[GaleriaController::class, 'guardacambiogaleria'])->name('guardacambiogaleria');
 
 
+// Routes for login
+route::get('login',[loginController::class, 'login'])->name('login');
+route::post('validar',[loginController::class, 'validar'])->name('validar');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });

@@ -107,7 +107,19 @@
                                         </select>
                                     </div>
                                 </div>
-
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <label for="dni">El usuario esta:</label>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" id="activo1" name="activo" class="form-check-input" value="Si" checked>Activo
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" id="activo1" name="activo" value="No">Inactivo
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="">
                                         <label for="img">Foto de perfil:
